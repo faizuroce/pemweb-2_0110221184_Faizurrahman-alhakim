@@ -1,4 +1,5 @@
-<div class="halaman">
-	<h2>Home</h2>
-	<p>ini adalah halaman Home</p>
-</div>
+<?php
+include_once "form_pasien.php";
+include_once "class_BMIpasien.php";
+include_once "class_BMI.php";
+?>
