@@ -1,50 +1,31 @@
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-<div class="content">
-	<header>
-		<h1 class="judul">WEB DINAMIS PHP</h1>
-		<h3 class="deskripsi">Membuat Halaman Web Dinamis Dengan PHP <br>0110221184-Faizurrahman Alhakim-TI08</h3>
-	</header>
- 
-	<div class="menu">
-		<ul>
-			<li><a href="index.php?page=home">HOME</a></li>
-			<li><a href="index.php?page=about">ABOUT</a></li>
-			<li><a href="index.php?page=services">SERVICES</a></li>
-		</ul>
-	</div>
- 
-	<div class="badan">
- 
- 
-	<?php 
-	if(isset($_GET['page'])){
-		$page = $_GET['page'];
- 
-		switch ($page) {
-			case 'home':
-				include "halaman/home.php";
-				break;
-			case 'about':
-				include "halaman/about.php";
-				break;
-			case 'services':
-				include "halaman/services.php";
-				break;			
-			default:
-				echo "<center><h3>Maaf. Halaman tidak di temukan !</h3></center>";
-				break;
-		}
-	}else{
-		include "halaman/home.php";
-	}
- 
-	 ?>
- 
-	</div>
-</div>
-</body>
-</html>
+<?php
+include_once "Kucing.php";
+include_once "Persia.php";
+
+// membuat instance class kucing
+$kucing1 = new Kucing("Garfield", 3, 40);
+
+// panggil attribut dari class kucing
+echo "Nama : " . $kucing1->getNama() . "<br>";
+echo "Umur : " . $kucing1->getUmur() . " tahun <br>"; 
+$kucing1->setEnergi(100);
+echo "Energi : " . $kucing1->getEnergi() . "<br>";
+
+// set nilai ulang energi
+
+
+// panggil method dari class kucing
+echo $kucing1->makan() . "<br>";
+echo $kucing1->tidur() . "<br>";
+echo $kucing1->lari() . "<br>";
+
+echo "Energi sekarang : " . $kucing1->getEnergi() . "<br>";
+
+// membuat instance dari class persia
+$persia1 = new Persia("Bolang", "Orange", 140);
+
+echo "Nama : " .  $persia1->nama . "<br>";
+echo "Warna : " .  $persia1->warna . "<br>";
+echo "Energi : " .  $persia1->energi . "<br>";
+
+echo $persia1->makan();
